@@ -1,0 +1,25 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# Load dataset into a pandas DataFrame
+
+dt=pd.read_csv('C:/Users/WelCome/Desktop/master.csv')
+print(dt)
+
+# Create a pivot table to group data by country and year
+
+suicide_pivot = pd.pivot_table(dt, values='suicides_no', index=['country'], columns=['year'])
+
+# Create a bar chart using Matplotlib
+
+suicide_pivot.plot(kind='bar', figsize=(20,10))
+
+# Add chart title and axis labels
+
+plt.title('Suicide Rates by Country and Year')
+plt.xlabel('Country')
+plt.ylabel('Suicide No')
+
+# Show the chart
+plt.show()

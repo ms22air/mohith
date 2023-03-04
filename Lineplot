@@ -1,0 +1,23 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Import dataset
+dt=pd.read_csv('C:\\Users\\WelCome\\Desktop\\Customers.csv')
+print(dt)
+
+# Group data by profession and calculate average spending
+grouped_data = dt.groupby('Profession')['Annual Income ($)'].mean()
+
+# Create a line chart
+plt.plot(grouped_data.index, grouped_data.values, marker='o')
+
+# Creating a title
+plt.title('Annual Annual Income ($) by Profession')
+
+#Creating a labels
+plt.xlabel('Profession')
+plt.ylabel('Annual Income ($)')
+
+# Showing the plot
+plt.show()

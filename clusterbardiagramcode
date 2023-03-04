@@ -1,0 +1,26 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Import data
+dt=pd.read_csv('C:\\Users\\WelCome\\Desktop\\Customers.csv')
+print(dt)
+
+# Group data by gender and profession
+grouped_data = dt.groupby(['Gender', 'Profession']).size().reset_index(name='Count')
+
+# Pivot the data to create a clustered bar chart
+pivot_data = grouped_data.pivot(index='Profession', columns='Gender', values='Count')
+
+# Plot the chart
+pivot_data.plot(kind='bar', stacked=False)
+
+# Creating a labels
+
+plt.xlabel('Profession')
+plt.ylabel('Count')
+#Creating a title
+
+plt.title('Gender and Profession Distribution')
+
+#Showing the plot
+plt.show()

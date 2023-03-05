@@ -17,6 +17,7 @@ plt.title('Annual Annual Income ($) by Profession')
 
 #Creating a labels
 plt.xlabel('Profession')
+plt.xticks(fontsize=6)
 plt.ylabel('Annual Income ($)')
 
 # Showing the plot

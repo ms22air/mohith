@@ -1,0 +1,21 @@
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data from a CSV file
+dt=pd.read_csv('C:/Users/WelCome/Desktop/China population.csv')
+print(dt)
+
+# Create a scatter plot of year and population density
+plt.scatter(dt["Year"], dt["Population Density"])
+
+#Create a title
+plt.title("Population Density in China")
+
+#Creating a xlabel and ylabel
+plt.xlabel("Year")
+plt.ylabel("Population Density")
+
+#Plotting the chart
+
+plt.show()
